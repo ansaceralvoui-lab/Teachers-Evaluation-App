@@ -1,5 +1,5 @@
 self.addEventListener("install", function (event) {
-    console.log("Service Worker Installed");
+    console.log("Teachers Evaluation Installed");
 });
 
 self.addEventListener("fetch", function (event) {
