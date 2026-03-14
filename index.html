@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Teacher Evaluation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d6efd">
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: #d6ecff;
+            padding: 40px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0b5ed7;
+        }
+
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Teacher Evaluation</h2>
+
+    <input type="text" id="teacher" placeholder="Teacher Name"><br>
+    <input type="text" id="student" placeholder="Student Name"><br>
+    <input type="number" id="score" placeholder="Score"><br>
+
+    <button onclick="checkScore()">Submit</button>
+
+    <div id="output"></div>
+
+    <script>
+        function checkScore() {
+
+            let teacher = document.getElementById("teacher").value;
+            let student = document.getElementById("student").value;
+            let score = document.getElementById("score").value;
+
+            let result = "";
+
+            if (score < 50) {
+                result = "Lawlaw";
+            } else {
+                result = "Sagad";
+            }
+
+            document.getElementById("output").innerHTML =
+                "Teacher: " + teacher + "<br>" +
+                "Student: " + student + "<br>" +
+                "Score: " + score + "<br>" +
+                "Result: " + result;
+        }
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js');
+        }
+    </script>
+
+</body>
+
+</html>
